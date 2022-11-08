@@ -72,10 +72,14 @@ document.querySelector("#mute").addEventListener("click", function() {
 
 });
 
-document.querySelector("#slider").addEventListener("mousemove",function() {
+document.querySelector("#slider").addEventListener("click",function() {
 	console.log("Volume Slider");
+	console.log("Video volume" + video.volume)
+	console.log("Slider value" + this.value)
+	console.log("BEFORE" + video.volume)
 	video.volume = this.value/100;
-	document.querySelector("#volume").innerHTML = (video.volume * 100)+ "%"
+	console.log("AFTER" + video.volume)
+	document.querySelector("#volume").innerHTML = video.volume * 100+ "%"
 
 });
 
