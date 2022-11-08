@@ -72,12 +72,12 @@ document.querySelector("#mute").addEventListener("click", function() {
 
 });
 
-document.querySelector("#slider").addEventListener("slidestop", function() {
-	// TODO -- does this still user click
+document.querySelector("#slider").addEventListener("mousemove",function() {
 	console.log("Volume Slider");
-	video.volume = document.getElementById("slider").value;
+	video.volume = document.querySelector("#slider").innerHTML;
+	console.log(video.volume)
+	// video.volume = document.getElementById("slider").innerHTML;
 	document.getElementById("volume").innerHTML = document.getElementById("slider").value + "%"
-
 });
 
 // Utilize the existing oldSchool class on the video element
