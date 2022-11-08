@@ -29,7 +29,7 @@ document.querySelector("#pause").addEventListener("click", function() {
 document.querySelector("#slower").addEventListener("click", function() {
 	console.log("Slow Down");
 	// Slow the current video speed by 10% each time the button is clicked 
-	video.playbackRate = video.playbackRate - 0.1; 
+	video.playbackRate = video.playbackRate * 0.9; 
 	// Log the new speed to the console.  
 	console.log(video.playbackRate);
 
@@ -39,7 +39,7 @@ document.querySelector("#slower").addEventListener("click", function() {
 document.querySelector("#faster").addEventListener("click", function() {
 	console.log("Speed Up");
 
-	video.playbackRate = video.playbackRate + 0.1;
+	video.playbackRate = video.playbackRate/0.9;
 	// Log the new speed to the console.  
 	console.log(video.playbackRate);
 
@@ -74,9 +74,10 @@ document.querySelector("#mute").addEventListener("click", function() {
 
 document.querySelector("#slider").addEventListener("mousemove",function() {
 	console.log("Volume Slider");
-	video.volume = document.querySelector("#slider").innerHTML;
-	console.log(video.volume)
-	// video.volume = document.getElementById("slider").innerHTML;
+// 	video.volume = document.querySelector("#slider").innerHTML;
+// 	console.log(video.volume)
+// 	// video.volume = document.getElementById("slider").innerHTML;
+	video.volume = this.value/100;
 	document.getElementById("volume").innerHTML = document.getElementById("slider").value + "%"
 });
 
